@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 class Dec2Hex
 {
-	private static final Logger logger = Logger.getLogger(MyClass.class.getName());
+	private static final Logger logger = Logger.getLogger(Dec2Hex.class.getName());
 	public static int Arg1;
 		public static void main(String args[])    
 		{
@@ -19,7 +19,7 @@ class Dec2Hex
 			}catch (NumberFormatException e)
 			{
 				logger.warning(e + " is not a valid decimal");
-				throw new CustomException("Non-decimal number parsed to argument");
+				throw new NumberFormatException("Invalid Decimal argument");
 			}
 			Arg1 = Integer.parseInt(args[0]);
 			char ch[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
