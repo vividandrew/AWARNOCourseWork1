@@ -1,20 +1,25 @@
-
+import java.util.logging.Logger;
+import java.util.logging.Level;
 import java.util.Scanner;
 
 class Dec2Hex
 {
+	private static final Logger logger = Logger.getLogger(MyClass.class.getName());
 	public static int Arg1;
 		public static void main(String args[])    
 		{
 			// If parsed arguments are 0 print instructions to use the command and then return
-           		if(args.length != 1 ){System.out.println("This command requires 1 argument passed to execute");return;};
+           		if(args.length != 1 ){
+				logger.info("This command requires 1 argument passed to be executed");
+				throw new IllegalArgumentException("Requires 1 argument to execute");
+			};
 
 			try{
 				Arg1 = Integer.parseInt(args[0]);
 			}catch (NumberFormatException e)
 			{
-				System.out.println(e + " is not a valid decimal");
-				return;
+				logger.warning(e + " is not a valid decimal")
+				throw new CustomException("Non-decimal number parsed to argument");
 			}
 			Arg1 = Integer.parseInt(args[0]);
 			char ch[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
