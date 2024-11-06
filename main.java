@@ -18,7 +18,7 @@ class Dec2Hex
 				Arg1 = Integer.parseInt(args[0]);
 			}catch (NumberFormatException e)
 			{
-				logger.warning(e + " is not a valid decimal")
+				logger.warning(e + " is not a valid decimal");
 				throw new CustomException("Non-decimal number parsed to argument");
 			}
 			Arg1 = Integer.parseInt(args[0]);
