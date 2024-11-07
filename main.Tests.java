@@ -10,12 +10,6 @@ class Dec2HexTest
 {
 	Dec2Hex app;
 
-	@BeforeEach
-	void setUp()
-	{
-		app = new Dec2Hex();
-	}
-
 	@Test
 	@DisplayName("Passing expected arguments")
 	void testExpected()
