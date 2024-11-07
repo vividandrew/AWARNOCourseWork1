@@ -21,7 +21,7 @@ class Dec2HexTest
 	void testExpected()
 	{
 		String[] args = {"15",};
-		assertEquals("F", app.convertDecimalToHex(15));
+		assertEquals("F", Dec2Hex.convertDecimalToHex(15));
 	}
 
 	@Test
@@ -30,7 +30,7 @@ class Dec2HexTest
 	{
 		String[] args = {};
 		assertThrows(IllegalArgumentException.class, () -> {
-			app.parseInteger(args);
+			Dec2Hex.parseInteger(args);
 		});
 	}
 
@@ -40,7 +40,7 @@ class Dec2HexTest
 	{
 		String[] args = {"15","25"};
 		assertThrow(IllegalArgumentException.class, () -> {
-			app.parseInteger(args);
+			Dec2Hex.parseInteger(args);
 		});
 	}
 
@@ -50,7 +50,7 @@ class Dec2HexTest
 	{
 		String[] args = {"fifteen"};
 		assertThrow(NumberFormatException.class, () -> {
-			app.parseInteger(args);
+			Dec2Hex.parseInteger(args);
 		});
 	}
 
