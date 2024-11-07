@@ -39,7 +39,7 @@ class Dec2HexTest
 	void testTooManyArguments()
 	{
 		String[] args = {"15","25"};
-		assertThrow(IllegalArgumentException.class, () -> {
+		assertThrows(IllegalArgumentException.class, () -> {
 			Dec2Hex.parseInteger(args);
 		});
 	}
@@ -49,7 +49,7 @@ class Dec2HexTest
 	void testWrongFormat()
 	{
 		String[] args = {"fifteen"};
-		assertThrow(NumberFormatException.class, () -> {
+		assertThrows(NumberFormatException.class, () -> {
 			Dec2Hex.parseInteger(args);
 		});
 	}
