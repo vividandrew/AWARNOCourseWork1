@@ -30,7 +30,30 @@ class Dec2HexTest
 	{
 		String[] args = {};
 		assertThrows(IllegalArgumentException.class, () -> {
-			Dec2Hex.parseInteger(args);
+			app.parseInteger(args);
 		});
 	}
+
+	@Test
+	@DisplayName("Passing too many arguments")
+	void testTooManyArguments()
+	{
+		String[] args = {"15","25"}
+		assertThrow(IllegalArgumentException.class, () -> {
+			app.parseInteger(args);
+		});
+	}
+
+	@Test
+	@DisplayName("Passing wrong datatype")
+	void testWrongFormat()
+	{
+		String[] args = {"fifteen"}
+		assertThrow(NumberFormatException.class, () -> {
+			app.parseInteger(args);
+		});
+	}
+
+
+
 }
